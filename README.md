@@ -34,3 +34,37 @@ This dataset contains 11 columns and a total of 16600 records:
 In data analysis, data cleaning and preprocessing is one of the most crucial steps. So, let’s dive in and get started!
 ### 3.1 Data Preparation
 I start by importing essential Python libraries and loading the dataset into a DataFrame. This ensures that the environment is properly set up for data analysis and visualization.
+
+```python
+# Importing necessary libraries and suppressing warnings
+import warnings
+
+warnings.filterwarnings('ignore')
+
+import numpy as np
+import pandas as pd
+import matplotlib
+
+# Use Agg backend if using full matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+import seaborn as sns
+
+sns.set_style('whitegrid')
+
+# Load the dataset
+video_games = pd.read_csv('vgsales.csv')
+
+# Display the first few rows
+video_games.head()
+```
+![alt text](assets/data_overview.png)
+
+### 3.2 Data Cleaning
+#### 3.2.1 Handle Missing Values
+I check for missing values in the dataset and calculate their proportion relative to the entire data. This helps assess whether missing data poses a risk to the analysis. Given that the proportion of missing records is relatively small compared to the overall dataset, I have decided to remove them rather than attempt an imprecise replacement.
+```python
+video_games.isna().sum()
+```
