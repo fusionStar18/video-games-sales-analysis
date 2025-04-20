@@ -68,3 +68,4 @@ I check for missing values in the dataset and calculate their proportion relativ
 ```python
 video_games.isna().sum()
 ```
+![alt text](assets/number_of_missing_values.png)
